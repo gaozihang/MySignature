@@ -41,10 +41,11 @@ public class DrawLines : MonoBehaviour {
         }
         if(Input.GetKey(KeyCode.W))
         {
-            canvas.SetActive(false);
+            //因为ugui默认采用Screen Space-Overlay模式，不会camera显示canvas信息
+            //canvas.SetActive(false);
             StartCoroutine(CaptureCamera(Camera.main, new Rect(0, 0, Screen.width, Screen.height)));
             audioCapture.Play();
-            canvas.SetActive(true);
+            //canvas.SetActive(true);
         }
         if (Input.GetKey(KeyCode.Q))
         {
